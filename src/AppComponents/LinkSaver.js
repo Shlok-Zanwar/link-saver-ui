@@ -12,8 +12,10 @@ import MyConditional from "../Components/MyConditional";
 
 export default function LinkSaver({ isEdit }) {
     const editId = useParams().id;
-    const [searchParams, setSearchParams] = useSearchParams();
-    const sharedUrl = searchParams.get("text");
+    // const [searchParams, setSearchParams] = useSearchParams();
+    const url = window.location.search;
+    // In this url we need to find 'http' and then fint the first '&' 
+
     const navigate = useNavigate();
     // const sharedText = searchParams.get('text');
 
@@ -34,6 +36,26 @@ export default function LinkSaver({ isEdit }) {
     const { metadata, isLoading, isError } = useLinkPreview(link);
 
     useEffect(() => {
+        const httpStartIndex = url.indexOf("http");
+        var httpEndIndex = url.indexOf("&", httpStartIndex);
+        if (httpEndIndex < 0) {
+            httpEndIndex = url.indexOf(" ", httpStartIndex);
+        }
+        if (httpEndIndex < 0) {
+            httpEndIndex = url.indexOf("%20", httpStartIndex);
+        }
+        if (httpEndIndex < 0) {
+            httpEndIndex = url.length;
+        }
+        var sharedUrl = url.substring(httpStartIndex, httpEndIndex);
+        
+        try {
+            sharedUrl = decodeURIComponent(sharedUrl);
+            // setLink(sharedUrl);
+        } catch (e) {
+            console.log(e);
+        }
+
         if(sharedUrl && !isEdit) {
             setDetails(prev => ({
                 ...prev,
@@ -41,7 +63,7 @@ export default function LinkSaver({ isEdit }) {
             }));
         }
         setLink(sharedUrl);
-    }, [sharedUrl, isEdit]);
+    }, []);
 
 
     const onAdd = useCallback(
@@ -212,13 +234,13 @@ export default function LinkSaver({ isEdit }) {
                         </div>
                         <div
                             className="field"
-                            style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
+                            style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
                         >
-                            <div style={{ height: "100px", width: "100px" }}>
+                            <div style={{ width: "100px" }}>
                                 <img
                                     src={details?.metadata?.img || "sss"}
                                     alt=""
-                                    style={{ height: "100px", objectFit: "contain", borderRadius: "10px" }}
+                                    style={{ width: "100px", objectFit: "contain", borderRadius: "10px" }}
                                     onError={e => {
                                         e.target.onerror = null;
                                         e.target.src = "/image-not-found.png";

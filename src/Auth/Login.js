@@ -126,7 +126,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-            <span style={{ marginTop: '30px'}}>Version : 1.8.0</span>
+            <span style={{ marginTop: '30px'}}>Version : 1.9.0</span>
         </div>
     );
 }
