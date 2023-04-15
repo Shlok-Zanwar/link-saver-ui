@@ -50,7 +50,8 @@
   "background_color": "#ffffff",
   "share_target": {
     "action": "/links/add",
-    "method": "GET",
+    "method": "POST",
+    "enctype": "multipart/form-data",
     "params": {
       "title": "text",
       "text": "text",
