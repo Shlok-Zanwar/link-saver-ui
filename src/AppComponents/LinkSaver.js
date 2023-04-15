@@ -303,7 +303,9 @@ export default function LinkSaver({ isEdit }) {
                 </div>
             </div>
             {/* </div> */}
-            <span></span>
+            <span>
+                href={window.location.href}
+            </span>
         </div>
     );
 }
