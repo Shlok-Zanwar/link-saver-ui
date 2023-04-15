@@ -13,7 +13,7 @@ import MyConditional from "../Components/MyConditional";
 export default function LinkSaver({ isEdit }) {
     const editId = useParams().id;
     const [searchParams, setSearchParams] = useSearchParams();
-    const sharedUrl = searchParams.get("url");
+    const sharedUrl = searchParams.get("text");
     const navigate = useNavigate();
     // const sharedText = searchParams.get('text');
 
