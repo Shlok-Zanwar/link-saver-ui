@@ -1,0 +1,488 @@
+:root {
+	--navbarHeight: 50px;
+	--sidebarOpenWidth: 200px;
+	--sidebarClosedWidth: 54px;
+	--sidebarFooterHeight: 25px;
+
+	--navbarBackground: #18232D;
+	--navbarColor: #fff;
+
+	--sidebarBackground: #fff;
+	--sidebarTextColor: #18232D;
+	--sidebarBorder: #cfcfcf;
+
+	--contentBackground: #fff;
+}
+
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* background-color: #212121; */
+	background-color: #171717;
+	color: #fff;
+}
+
+
+.login-outer-div {
+	padding-top: 30px;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #7a7a7a;
+	border-radius: 20px;
+	border: 4px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a8bbbf;
+}
+
+
+.ant-layout-header {
+	background-color: var(--navbarBackground);
+	color: var(--navbarTextColor);
+	padding: 0;
+	height: var(--navbarHeight) !important;
+	line-height: var(--navbarHeight) !important;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 0 10px !important;
+	/* box-shadow: 0px -15px 10px -15px #111; */
+}
+
+.sidebar-component {
+	height: 100vh;
+	overflow-y: auto;
+	background-color: var(--sidebarBackground);
+	color: var(--sidebarTextColor);
+	border-right: 1px solid var(--sidebarBorder);
+	/* Add shadow to the sidebar */
+	/* box-shadow: 0px 0px 5px 0px #111; */
+}
+
+.sidebar-top-logo {
+	/* border-right: 1px solid var(--sidebarTextColor); */
+	border-bottom: 1px solid var(--sidebarBorder);
+	height: var(--navbarHeight);
+	line-height: var(--navbarHeight);
+}
+
+.sidebar-content {
+	height: calc(100vh - var(--navbarHeight) - var(--sidebarFooterHeight) - 5px);
+	overflow: auto;
+	/* padding-bottom: 100px; */
+	overflow-x: hidden;
+}
+
+.sidebar-footer {
+	border-top: 1px solid #e8e8e8;
+	height: var(--sidebarFooterHeight);
+	line-height: var(--sidebarFooterHeight);
+
+	/* text-align: center; */
+}
+
+.main-content-div {
+	width: 100%;
+	padding: 0px 3px;
+	background-color: var(--contentBackground);
+	height: calc(100vh - var(--navbarHeight));
+	overflow: auto;
+}
+
+.navbar-component {
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-between; */
+	align-items: center;
+	height: 100%;
+	/* Add bottom shadow */
+	box-shadow: 0px -15px 10px -15px #111;
+}
+
+.navbar-page-title {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+#navbar-portal {
+	/* background-color: rgba(255, 0, 0, 0.411); */
+	width: 100%;
+	padding: 0px 10px;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.my-form-outer {
+	padding: 6px;
+}
+
+.my-form-header {
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.my-form-title {
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--navbarBackground);
+	text-decoration: underline;
+}
+
+.my-form-tabpane-outer {
+	/* height: 100%;
+	overflow: auto; */
+	padding-left: 10px;
+	padding-bottom: 40px;
+}
+
+.my-form-multiple-inline-input {
+	display: inline-flex;
+	align-items: flex-start;
+	flex-direction: column;
+	flex-flow: wrap;
+	gap: 10px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+.my-table-filter-row {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+
+.actions-outer-div {
+	display: inline-flex;
+	gap: 10px;
+	/* justify-content: space-between; */
+	/* width: 100%; */
+}
+
+
+hr {
+	margin: 2.5rem 0;
+	border-width: 0;
+	border-top: 2px solid #afb8c1;
+}
+
+h1 {
+	margin: 0 0 2rem;
+	font-size: 3rem;
+	line-height: 3.75rem;
+}
+
+h2 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	line-height: 2.25rem;
+}
+
+h3 {
+	margin: 0 0 0.5rem;
+	font-size: 1.2rem;
+}
+
+a {
+	color: #4f46e5;
+}
+
+p,
+summary {
+	margin: 1.5rem 0;
+}
+
+pre {
+	margin: 0;
+	color: #eaf2f1;
+	background: #282a3a;
+	border-radius: 6px;
+}
+
+pre>code {
+	display: block;
+	padding: 0.5rem;
+	font-size: 0.9375rem;
+	font-family: Consolas, Menlo, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+fieldset {
+	border: 2px solid #7f7fd3;
+	border-radius: 6px;
+	margin: 1rem 0;
+	padding: 0.5rem;
+}
+
+fieldset legend {
+	color: #7f7fd3;
+}
+
+fieldset label {
+	display: block;
+	margin: 0 0 0.375rem;
+}
+
+fieldset input[type='checkbox'] {
+	margin-right: 0.5rem;
+	accent-color: #4f46e5;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 45rem;
+	padding: 4rem 0;
+}
+
+.react-tags+p {
+	margin: 0.5rem 0;
+}
+
+
+.react-tags {
+	position: relative;
+	padding: 0.25rem 0 0 0.25rem;
+	/* border: 2px solid #afb8c1; */
+	border-radius: 6px;
+
+	/* shared font styles */
+	font-size: 1em;
+	line-height: 1.2;
+
+	/* clicking anywhere will focus the input */
+
+	display: inline-flex;
+	flex-direction: column;
+	width: 100%;
+	/* flex-direction: row; */
+
+}
+
+/* .react-tags.is-active {
+	border-color: #4f46e5;
+} */
+
+.react-tags.is-disabled {
+	opacity: 0.75;
+	background-color: #eaeef2;
+	/* Prevent any clicking on the component */
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.react-tags.is-invalid {
+	border-color: #fd5956;
+	box-shadow: 0 0 0 2px rgba(253, 86, 83, 0.25);
+}
+
+.react-tags__label {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.react-tags__list {
+	/* Do not use display: contents, it's too buggy */
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 3px;
+	padding: 0;
+}
+
+.react-tags__list-item {
+	display: inline;
+	list-style: none;
+}
+
+.react-tags__tag {
+	cursor: pointer;
+	color: rgb(0, 255, 200);
+}
+
+.react-tags__tag:hover {
+	/* color: #ffffff; */
+	/* background-color: #4f46e5; */
+	box-shadow: 0px 0px 5px 1px rgb(0, 255, 200);
+
+}
+
+.react-tags__tag::after {
+	content: '✕';
+	color: rgb(0, 255, 200);
+
+	margin-left: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.react-tags__tag:not(:hover)::after {
+	color: #7c7d86;
+}
+
+.react-tags__combobox {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	/* padding-left: 1em; */
+}
+
+.react-tags__combobox-input {
+	/* prevent autoresize overflowing the container */
+	max-width: 100%;
+
+	/* remove styles and layout from this element */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	background: none;
+
+	/* match the font styles */
+	font-size: inherit;
+	line-height: inherit;
+	background: none;
+	border: none;
+	outline: none;
+	width: 100%;
+	color: rgb(0, 255, 200);
+
+}
+
+.react-tags__combobox-input::placeholder {
+	color: #7c7d86;
+	opacity: 1;
+}
+
+.react-tags__listbox {
+	position: absolute;
+	z-index: 1;
+	top: calc(100% + 5px);
+
+	/* Negate the border width on the container */
+	left: -2px;
+	right: -2px;
+
+	max-height: 12.5rem;
+	overflow-y: auto;
+	/* background: #ffffff; */
+	box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -4px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+	/* display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column; */
+	/* flex-wrap: wrap; */
+	gap: 0.5em;
+	border-radius: 25px;
+	padding: 0.6em;
+	border: none;
+	outline: none;
+	color: white;
+	background-color: #171717;
+	box-shadow: 0px 0px 10px 1px rgba(0, 255, 117, 0.30);
+
+
+}
+
+.react-tags__listbox-option {
+	padding: 0.375rem 0.5rem;
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+}
+
+.react-tags__listbox-option:hover {
+	cursor: pointer;
+	/* display: inline; */
+	list-style: none;
+
+	/* background: #eaeef2; */
+	box-shadow: 0px 0px 5px 1px rgba(0, 255, 117, 0.30);
+
+}
+
+.react-tags__listbox-option:not([aria-disabled='true']).is-active {
+	/* background: #4f46e5;
+	color: #ffffff; */
+	box-shadow: 0px 0px 5px 1px rgba(0, 255, 117, 0.30);
+
+}
+
+.react-tags__listbox-option[aria-disabled='true'] {
+	color: #7c7d86;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.react-tags__listbox-option[aria-selected='true']::after {
+	content: '✓';
+	margin-left: 0.5rem;
+}
+
+.react-tags__listbox-option[aria-selected='true']:not(.is-active)::after {
+	color: #4f46e5;
+}
+
+
+/* Change the mark tags background */
+mark {
+	background-color: #171717;
+	color: rgb(0, 255, 200);
+	padding: 0;
+	/* border-radius: 5px; */
+}
+
+mark:not(:empty) {
+	visibility: visible;
+}
+
+mark:empty {
+	visibility: hidden;
+}
+
+
+/* .react-tags__list-home-ext{
+	margin: 0;
+	padding: 0;
+} */
+
+.div-icon-and-info {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	gap: 8px;
+}
+
+.span-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* On hover this span should show title */
